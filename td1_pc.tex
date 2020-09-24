@@ -1,0 +1,1397 @@
+%st&pdflatex
+\documentclass[12pt, a4paper,oneside]{article} %article pour voir la todolist
+% \documentclass[12pt, a4paper,oneside]{amsart} %amsart pour faire joli
+\usepackage{amssymb, amsfonts, mathrsfs}
+%\usepackage{a4wide, enumerate,} %test
+% \usepackage{showkeys} % for work version
+\usepackage[textwidth=1in,backgroundcolor=white,linecolor=white,bordercolor=white,textcolor=red]{todonotes}
+%\usepackage{a4wide}
+
+\usepackage{glossaries}
+\usepackage[bookmarks]{hyperref} % in that order, to not have a link with every
+				% abreviation
+
+
+\newcommand{\g}[1]{\gls{#1}}
+
+\newglossaryentry{graphs} {
+	name={\ensuremath{\Theta}},
+	description={the compact family of graphs}
+}
+\newglossaryentry{graphs_dual} {
+	name={\ensuremath{\Theta^{*} }},
+	description={the compact family of dual graphs}
+}
+
+\input{../these/preamble.tex}
+
+\title{Corrections feuille 1 PC}
+\author{Florestan {Martin-Baillon}}
+
+\begin{document}
+
+\maketitle
+
+Les deux premiers exercices
+sont essentiellement une utilisation
+de l'identité remarquable "carré d'une somme":
+\begin{equation}
+	(a+b)^2
+	=
+	a^2 + 2ab + b^2,
+\end{equation}
+qu'il faut savoir utiliser dans les deux sens:
+à la fois pour développer un carré,
+et pour le factoriser.
+
+\section{Correction exercice 1}
+
+On doit montrer que
+\begin{equation}
+	(a^2 + b^2)
+	(c^2 + d^2)
+	=
+	(ac + bd)^{2} 
+	+
+	(ad - bc)^2
+	.
+\end{equation}
+On développe le membre de gauche:
+\begin{align}
+	(a^2 + b^2)
+	(c^2 + d^2)
+	=
+	a^2 c^2
+	+
+	a^2 d^2
+	+
+	b^2 c^2
+	+
+	b^2 d^2
+	,
+\end{align}
+et on développe le membre de droite
+en utilisant deux fois l'identité remarquable:
+\begin{align}
+	(ac + bd)^{2} 
+	+
+	(ad - bc)^2
+	&=
+	a^2 c^2
+	+
+	b^2 d^2
+	+
+	2 acbd
+	+
+	a^2 d^2
+	+
+	b^2 c^2
+	-
+	2 adbc
+	\\
+	&=
+	a^2 c^2
+	+
+	b^2 d^2
+	+
+	a^2 d^2
+	+
+	b^2 c^2,
+\end{align}
+et on constate que ces deux quantités sont égales.
+
+\section{Correction exercice 2}
+
+(1) On doit montrer l'inégalité
+\begin{equation}
+	x^2 + y^2 \ge 2xy
+	.
+\end{equation}
+On raisonne par équivalence: c'est à dire qu'on part
+de l'énoncé que l'on veut montrer
+et on exprime des énoncés équivalents à celui-ci
+jusqu'à trouver un énoncé que l'on sait être vrai.
+\begin{align}
+	x^2 + y^2 & \ge 2xy
+	\\
+	& \eq 
+	\\
+	x^2 + y^2 - 2xy & \ge 0
+	\\
+	& \eq \com{Factorisation de l'identité remarquable}
+	\\
+	(x - y)^2 & \ge 0
+	.
+\end{align}
+La dernière inégalité est vrai,
+car le carré d'un nombre réel est toujours positif.
+Par équivalence, l'inégalité dont on est partie est vrai.
+
+(2) Même raisonnement.
+On suppose $ x > 0 $.
+\begin{align}
+	x + \frac{1}{x}  & \ge 2
+	\\
+	& \eq
+	\\
+	x + \frac{1}{x} - 2  & \ge 0
+	\\
+	& \eq \com{Mise au même dénominateur}
+	\\
+	\frac{x^2 + 1 - 2x}{x} & \ge 0
+	\\
+	& \eq \com{Factorisation de l'identité remarquable}
+	\\
+	\frac{(x-1)^2}{x} & \ge 0
+	.
+\end{align}
+La dernière inégalité est vrai,
+car $ (x-1)^2 $ est un carré, donc positif
+et $ x $ est positif.
+Donc l'inégalité de départ est vrai par équivalence.
+
+(3) Même raisonnement. 
+\begin{align}
+	xy  & \le (\frac{x+y}{2})^2
+	\\
+	& \eq \com{On sort le $\frac{1}{2}$ du carré}
+	\\
+	xy  & \le \frac{1}{4}(x+y)^2
+	\\
+	& \eq
+	\\
+	4 xy  & \le (x+y)^2
+	\\
+	& \eq
+	\\
+	0  & \le (x+y)^2  - 4 xy
+	\\
+	& \eq \com{On développe l'identité remarquable}
+	\\
+	0  & \le x^2 + y^2 + 2xy  - 4 xy
+	\\
+	& \eq
+	\\
+	0  & \le x^2 + y^2 - 2 xy
+	\\
+	& \eq \com{On factorise l'identité remarquable}
+	\\
+	0  & \le (x-y)^2
+	.
+\end{align}
+La dernière inégalité est vrai, toujours
+parce qu'un carré est positif,
+donc la première est vrai.
+
+(4) Cette inégalité est plus astucieuse.
+On se rappelle qu'à la question (1) on a montré:
+\begin{equation}
+	x^2 + y^2 \ge 2xy
+	.
+\end{equation}
+On peut aussi appliquer cette inégalité à
+$ x $ et $ z $, ainsi qu'à $ y $ et $ z $
+et on obtient:
+\begin{align}
+	x^2 + y^2 & \ge 2xy
+	\\
+	x^2 + z^2 &\ge 2xz
+	\\
+	y^2 + z^2 &\ge 2yz
+	.
+\end{align}
+Maintenant on somme ces trois inégalités,
+pour obtenir:
+\begin{align}
+	x^2 + y^2
+	+ x^2 + z^2
+	+ y^2 + z^2 
+	& \ge 2xy + 2xz + 2 yz
+	\\
+	& \eq
+	\\
+	2 ( x^2 + y^2 + z^2)
+	& \ge
+	2 (xy+xz + yz)
+	\\
+	& \eq
+	\\
+	 x^2 + y^2 + z^2
+	& \ge
+	xy+xz + yz
+	.
+\end{align}
+
+\section{Exercice 3}
+
+On doit montrer l'énoncé $ A \Rightarrow B $.
+On sait que cet énoncé est équivalent à sa \emph{contraposé}:
+$ \text{non } (B) \Rightarrow \text{non } (A) $.
+On va montrer la contraposé (parce que c'est, dans ce cas, plus facile).
+Écrivons les énoncés
+$ \text{non } (A) $ 
+et 
+$ \text{non } (B) $:
+
+Comme $ (A) $ est
+\begin{equation}
+	\forall \varepsilon > 0, 0 \le x \le \varepsilon
+	,
+\end{equation}
+et comme par hypothèse
+$ x \ge 0 $,
+$ (A) $ est équivalent à
+\begin{equation}
+	\forall \varepsilon > 0, x \le \varepsilon
+	,
+\end{equation}
+On en déduit que l'énoncé 
+$ \text{non } (A) $ 
+est
+\begin{equation}
+	\exists \varepsilon > 0, x > \varepsilon
+	.
+\end{equation}
+En effet, on se rappelle que la négation
+d'une proposition de la forme
+"pour tout $ x $, $ x $ vérifie la propriété $ P $ "
+est la proposition
+"il existe un $ x $ qui ne vérifie pas la propriété $ P $",
+c'est à dire la proposition qui exprime
+l'existence d'un \emph{contre-exemple}.
+
+L'énoncé $ (B) $ est
+\begin{equation}
+	x = 0
+\end{equation}
+donc sa négation est
+\begin{equation}
+	x \neq 0
+	.
+\end{equation}
+On doit donc montrer l'implication:
+\begin{equation}
+	x \neq 0
+	\Rightarrow
+	\exists \varepsilon > 0, x > \varepsilon
+	.
+\end{equation}
+Traduit en langage courant, cette implication dit:
+si $ x $ n'est pas nul, il existe un $ \varepsilon $
+strictement positif qui est strictement plus petit que
+$ x $. Montrons cela:
+
+Soit $ x \neq 0 $. Par hypothèse,
+$ x \ge 0 $, donc $ x > 0 $.
+On a $ x > \frac{1}{2} x $;
+en effet:
+\begin{align}
+	x > \frac{1}{2} x
+	\eq
+	1 > \frac{1}{2}
+	,
+\end{align}
+où l'on a simplifié par $ x $,
+ce qui est licite car $ x > 0 $,
+et la dernière inégalité est évidemment vrai.
+Donc si on pose $ \varepsilon = \frac{1}{2} x $,
+on a $ \varepsilon > 0 $ et $ \varepsilon \le x $,
+ce qui donne bien le contre-exemple recherché.
+
+\section{Exercice 4}
+
+(1) On doit décider si la phrase
+<< $ \forall x \in \R, \exists y \in \R $
+tel que $ x < xy $>>
+est vrai.
+La phrase est fausse:
+il y a un \emph{contre-exemple}
+à la proposition
+<<$\exists y \in \R $
+tel que $ x < xy $>>
+.
+En effet, considérons $ x=0 $.
+Alors pour tout $ y \in \R $,
+$ x = x y $ car $ 0 = 0y $,
+donc il n'existe pas de $ y $
+tel que $ x < xy $.
+
+(2) On doit décider si la phrase
+<< $ \forall x \in \R, 
+x > 1$ ou $ x^2 < 2 $>>
+est vrai.
+Cette phrase est fausse.
+Un contre-exemple est,
+par exemple,
+$ x = -2 $.
+En effet, on a
+$ x = -2 < -1 $
+et $ x^2 = 4 > 2 $.
+
+(3) On doit décider si la phrase
+<< $ \forall x \in \R, 
+x > 1 \Rightarrow x > 0 $>>
+est vrai.
+Cett phrase est vrai.
+En effet, soit un $ x \in \R $.
+Supposons $ x > 1 $.
+Comme $ 1 > 0 $, on a que $ x > 0 $.
+
+Les 2 exercices suivants
+sont des applications
+du raisonement par récurrence.
+On a essayé de faire ressortir
+la structure de la preuve,
+qui est toujours la même:
+énoncé de ce qu'on doit montrer,
+initialisation, hérédité, conclusion.
+
+\section{Exercice 5}
+
+(1) On doit montrer que pour tout
+$ n \in \N^{*} $,
+\begin{equation}
+	\sum_{k=1}^{n} k
+	=
+	\frac{n(n+1)}{2}
+	.
+\end{equation}
+On va le démontrer par récurrence.
+Appelons $ (H_{n}) $ la proposition:
+\begin{equation}
+	\sum_{k=1}^{n} k
+	=
+	\frac{n(n+1)}{2}
+	.
+\end{equation}
+
+\textbf{Initialisation.}
+On montre que $ (H_{n}) $
+est vraie pour $ n=1 $.
+D'une part,
+\begin{equation}
+	\sum_{k=1}^{1} k
+	=
+	1
+	,
+\end{equation}
+et d'autre part,
+\begin{equation}
+	\frac{1(1+1)}{2}
+	=
+	\frac{2}{2}
+	=
+	1
+	.
+\end{equation}
+La proposition $ (H_{1}) $ 
+est donc vrai.
+
+\textbf{Hérédité.}
+Supposons que, pour un certain $ n \in \N^{*} $;
+la proposition $ (H_{n}) $ soit vraie.
+Démontrons $ (H_{n+1}) $.
+On a:
+\begin{align}
+	\sum_{k=1}^{n+1}
+	k
+	=
+	\sum_{k=1}^{n}
+	k
+	+
+	(n+1)
+	,
+\end{align}
+et par hypothèse de récurrence,
+on a que
+\begin{equation}
+	\sum_{k=1}^{n} k
+	=
+	\frac{n(n+1)}{2}
+	,
+\end{equation}
+donc en remplaçant on obtient:
+\begin{align}
+	\sum_{k=1}^{n+1}
+	k
+	=
+	\frac{n(n+1)}{2}
+	+
+	n+1
+	.
+\end{align}
+On simplifie la dernière expression:
+\begin{align}
+	\frac{n(n+1)}{2}
+	+
+	n+1
+	&=
+	\frac{n(n+1) + 2(n+1)}{2}
+	\com{On met au même dénominateur}
+	\\
+	&=
+	\frac{(n+1)(n+2)}{2}
+	\com{On factorise par $ n+1 $  }
+	.
+\end{align}
+On a donc prouvé:
+\begin{equation}
+	\sum_{k=1}^{n+1}
+	k
+	=
+	\frac{(n+1)(n+2)}{2}
+	,
+\end{equation}
+c'est à dire la proposition
+$ (H_{n+1}) $.
+On a bien prouvé l'hérédité,
+c'est à dire que
+$ (H_{n}) \Rightarrow (H_{n+1}) $.
+
+\textbf{Conclusion.}
+Par le principe de récurrence,
+on a prouvé que
+pour tout $ n \ge 1 $,
+\begin{equation}
+	\sum_{k=1}^{n} k
+	=
+	\frac{n(n+1)}{2}
+	.
+\end{equation}
+
+(2) On doit montrer que pour tout
+$ n \in \N^{*} $,
+\begin{equation}
+	\sum_{k=1}^{n} k^2
+	=
+	\frac{n(n+1)(2n+1)}{6}
+	.
+\end{equation}
+On va le démontrer par récurrence.
+Appelons $ (H_{n}) $ la proposition:
+\begin{equation}
+	\sum_{k=1}^{n} k^2
+	=
+	\frac{n(n+1)(2n+1)}{6}
+	.
+\end{equation}
+
+\textbf{Initialisation.}
+On montre que $ (H_{n}) $
+est vraie pour $ n=1 $.
+D'une part,
+\begin{equation}
+	\sum_{k=1}^{1} k^2
+	=
+	1
+	,
+\end{equation}
+et d'autre part,
+\begin{equation}
+	\frac{1(1+1)(2 \times 1+3)}{6}
+	=
+	\frac{6}{6}
+	=
+	1
+	.
+\end{equation}
+La proposition $ (H_{1}) $ 
+est donc vrai.
+
+\textbf{Hérédité.}
+Supposons que, pour un certain $ n \in \N^{*} $;
+la proposition $ (H_{n}) $ soit vraie.
+Démontrons $ (H_{n+1}) $.
+On a:
+\begin{align}
+	\sum_{k=1}^{n+1}
+	k^2
+	=
+	\sum_{k=1}^{n}
+	k^2
+	+
+	(n+1)^2
+	,
+\end{align}
+et par hypothèse de récurrence,
+on a que
+\begin{equation}
+	\sum_{k=1}^{n} k^2
+	=
+	\frac{n(n+1)(2n+1)}{6}
+	,
+\end{equation}
+donc en remplaçant on obtient:
+\begin{align}
+	\sum_{k=1}^{n+1}
+	k^2
+	=
+	\frac{n(n+1)(2n+1)}{6}
+	+
+	(n+1)^2
+	.
+\end{align}
+On simplifie la dernière expression:
+\begin{align}
+	\frac{n(n+1)(2n+1)}{6}
+	+
+	(n+1)^2
+	& =
+	\frac{n(n+1)(2n+1 + 6(n+1)^2)}{6}
+	\\
+	& =
+	\frac{(n+1)(n(2n+1) + 6(n+1))}{6}
+	\\
+	& =
+	\frac{(n+1)(2n^2+n + 6n+6)}{6}
+	\\
+	& =
+	\frac{(n+1)(2n^2+7n+6)}{6}
+	,
+\end{align}
+ce qui n'est pas encore le résultat
+que l'on souhaite; on voudrait
+obtenir
+\begin{equation}
+	\frac{(n+1)(n+2)(2n+1)}{6}
+	.
+\end{equation}
+Mais si on développe
+$ (n+2)(2n+1) $
+on trouve
+\begin{equation}
+	2n^2+7n+6
+	,
+\end{equation}
+ce qui prouve bien que 
+\begin{align}
+	\frac{n(n+1)(2n+1)}{6}
+	+
+	(n+1)^2
+	& =
+	\frac{(n+1)(2n^2+7n+6)}{6}
+	\\
+	& =
+	\frac{(n+1)(n+2)(2n+1)}{6}
+	,
+\end{align}
+et donc
+\begin{equation}
+	\sum_{k=1}^{n+1}
+	k^2
+	=
+	\frac{(n+1)(n+2)(2n+1)}{6}
+	,
+\end{equation}
+c'est à dire que $ (H_{n+1}) $
+est vraie.
+
+On a bien prouvé l'hérédité,
+c'est à dire que
+$ (H_{n}) \Rightarrow (H_{n+1}) $.
+
+\textbf{Conclusion.}
+Par le principe de récurrence,
+on a prouvé que
+pour tout $ n \ge 1 $,
+\begin{equation}
+	\sum_{k=1}^{n} k^2
+	=
+	\frac{n(n+1)(2n+1)}{6}
+	.
+\end{equation}
+
+
+(3) On doit montrer que pour tout
+$ n \in \N^{*} $,
+\begin{equation}
+	\sum_{k=1}^{n} k^3
+	=
+	\left( 
+	\frac{n(n+1)}{2}
+	\right)^2
+	.
+\end{equation}
+On va le démontrer par récurrence.
+Appelons $ (H_{n}) $ la proposition:
+\begin{equation}
+	\sum_{k=1}^{n} k^3
+	=
+	\left( 
+		\frac{n(n+1)}{2}
+	\right)^2
+	.
+\end{equation}
+
+\textbf{Initialisation.}
+On montre que $ (H_{n}) $
+est vraie pour $ n=1 $.
+D'une part,
+\begin{equation}
+	\sum_{k=1}^{1} k^3
+	=
+	1
+	,
+\end{equation}
+et d'autre part,
+\begin{equation}
+	\left(
+		\frac{1(1+1)}{2}
+	\right)
+	^{2} 
+	=
+	\left(
+		\frac{1}{1}
+	\right)
+	^2
+	=
+	1
+	.
+\end{equation}
+La proposition $ (H_{1}) $ 
+est donc vrai.
+
+\textbf{Hérédité.}
+Supposons que, pour un certain $ n \in \N^{*} $;
+la proposition $ (H_{n}) $ soit vraie.
+Démontrons $ (H_{n+1}) $.
+On a:
+\begin{align}
+	\sum_{k=1}^{n+1}
+	k^3
+	=
+	\sum_{k=1}^{n}
+	k^3
+	+
+	(n+1)^3
+	,
+\end{align}
+et par hypothèse de récurrence,
+on a que
+\begin{equation}
+	\sum_{k=1}^{n} k^3
+	=
+	\left( 
+		\frac{n(n+1)}{2}
+	\right)^2
+	,
+\end{equation}
+donc en remplaçant on obtient:
+\begin{align}
+	\sum_{k=1}^{n+1}
+	k^3
+	=
+	\left( 
+		\frac{n(n+1)}{2}
+	\right)^2
+	+
+	(n+1)^3
+	.
+\end{align}
+On simplifie la dernière expression:
+\begin{align}
+	\left( 
+		\frac{n(n+1)}{2}
+	\right)^2
+	+
+	(n+1)^3
+	& =
+	\frac{n^2(n+1)^2 + 4(n+1)^3}{4}
+	\\
+	& =
+	\frac{(n+1)^2(n^2 + 4(n+1))}{4}
+	\com{On met $ (n+1)^2 $  en facteur}
+	\\
+	& =
+	\frac{(n+1)^2(n^2 + 4n+4)}{4}
+	\\
+	& =
+	\frac{(n+1)^2(n+2)^2}{4}
+	\com{On factorise l'identité remarquable}
+	\\
+	& = 
+	\left( 
+		\frac{(n+1)(n+2)}{2}
+	\right)^2
+	,
+\end{align}
+et on a donc prouvé
+\begin{equation}
+	\sum_{k=1}^{n+1}
+	k^3
+	=
+	\left( 
+		\frac{(n+1)(n+2)}{2}
+	\right)^2
+	,
+\end{equation}
+c'est à dire que $ (H_{n+1}) $
+est vraie.
+
+On a bien prouvé l'hérédité,
+c'est à dire que
+$ (H_{n}) \Rightarrow (H_{n+1}) $.
+
+\textbf{Conclusion.}
+Par le principe de récurrence,
+on a prouvé que
+pour tout $ n \ge 1 $,
+\begin{equation}
+	\sum_{k=1}^{n+1}
+	k^3
+	=
+	\left( 
+		\frac{(n+1)(n+2)}{2}
+	\right)^2
+	.
+\end{equation}
+
+\section{Exercice 6}
+
+(1)
+On doit montrer que pour tout
+$ n \in \N $
+on a
+$ 2^{n} > n $.
+On va le montrer par récurrence.
+Soit $ (H_n) $ la proposition
+\begin{equation}
+2^{n} > n 
+.
+\end{equation}
+
+\textbf{Initialisation.}
+On montre que la propriété
+est vrai pour $ n=0 $.
+On a
+$2^{0} = 1$
+,
+donc
+\begin{equation}
+	2^{0} > 0
+	,
+\end{equation}
+ce qui veut dire que la propriété
+$ (H_{0}) $
+est vraie.
+On prouve aussi $ (H_{1}) $,
+car l'argument de l'hérédité
+nécessitera $ n \ge 1 $.
+On a $ 2^{1} = 2 $,
+donc
+\begin{equation}
+	2^{1} > 1
+	,
+\end{equation}
+et $ (H_{1}) $
+est vraie.
+
+\textbf{Hérédité.}
+On suppose que pour un certain
+$ n \ge 1 $,
+la propriété
+$ (H_{n}) $ est vraie,
+c'est à dire que l'on a
+\begin{equation}
+	2^{n} > n
+	.
+\end{equation}
+On va montrer que
+$ (H_{n+1}) $
+est aussi vraie.
+On a
+\begin{equation}
+	2^{n+1}
+	=
+	2 \times
+	2^{n}
+	,
+\end{equation}
+et par hypothèse
+de récurrence
+$ 2^{n} > n $,
+donc
+\begin{equation}
+	2^{n+1}
+	=
+	2 \times
+	2^{n} 
+	>
+	2 n
+	.
+\end{equation}
+De plus on a
+\begin{equation}
+	2n \ge n+1
+	,
+\end{equation}
+car
+\begin{equation}
+	2n \ge n+1
+	\eq
+	n \ge 1,
+\end{equation}
+et donc
+\begin{equation}
+	2^{n+1}
+	> 2n
+	\ge n+1
+	,
+\end{equation}
+donc $ 2^{n+1} > n+1 $
+et la propriété $ (H_{n+1}) $
+est démontrée.
+On a bien prouvé l'hérédité.
+
+\textbf{Conclusion.}
+Par le principe de récurrence,
+on a prouvé que pour tout
+$ n \in \N $,
+\begin{equation}
+	2^{n} 
+	>
+	n
+	.
+\end{equation}
+
+(2) On doit prouver l'inégalité
+de Bernouilli; pour tout $ x \ge 0 $,
+pour tout $ n \in \N $ on a
+\begin{equation}
+	(1+x)^{n} 
+	\ge
+	1 + nx
+	.
+\end{equation}
+On fixe un $ x \ge 0 $
+et on le prouve par récurrence
+sur $ n \in \N $.
+Soit $ (H_{n}) $ la proposition
+\begin{equation}
+	(1+x)^{n} 
+	\ge
+	1 + nx
+	.
+\end{equation}
+
+\textbf{Initialisation.}
+On prouve $ (H_{0}) $.
+On a $ (1+x)^{0} = 1 $
+et $ 1 + 0x = 1 $
+donc $ (H_{0}) $ est vraie.
+
+\textbf{Hérédité.}
+On suppose que pour un certain
+$ n \ge 1 $,
+la propriété
+$ (H_{n}) $ est vraie,
+c'est à dire que l'on a
+\begin{equation}
+	(1+x)^{n} 
+	\ge
+	1 + nx
+	.
+\end{equation}
+On montre $ (H_{n+1}) $.
+On a
+\begin{equation}
+	(1+x)^{n+1}
+	=
+	(1+x)^{n} 
+	(1+x)
+	,
+\end{equation}
+et par hypothèse de récurrence
+$ (1+x)^n \ge 1 + nx $,
+donc
+\begin{equation}
+	(1+x)^{n+1}
+	=
+	(1+x)^{n} 
+	(1+x)
+	\ge
+	(1+nx)(1+x)
+	=
+	1 + x + nx + nx^2
+	=
+	1 + (n+1)x + nx^2
+	,
+\end{equation}
+et comme $ nx^2 $
+est positif, on a
+\begin{equation}
+	1 + (n+1)x + nx^2
+	\ge
+	1 + (n+1)x
+	,
+\end{equation}
+donc finalement,
+\begin{equation}
+	(1+x)^{n+1}
+	\ge
+	1 + (n+1)x
+	.
+\end{equation}
+On a bien prouvé $ (H_{n+1}) $.
+
+\textbf{Conclusion.}
+Par le principe de récurrence
+on a prouvé que pour tout $ n \in \N $,
+\begin{equation}
+	(1+x)^{n}
+	\ge
+	1 + nx
+	.
+\end{equation}
+
+\section{Exercice 7}
+
+Pour tout cet exercice,
+on se fixe
+deux ensembles
+$ X $ et $ Y $,
+une application
+$ f : X \to Y $,
+des sous-ensembles
+$ A,B \subset X $
+et $ C,D \subset Y $.
+
+(1) On doit montrer:
+\begin{equation}
+	A \subset B
+	\Rightarrow
+	f(A)
+	\subset
+	f(B)
+	,
+\end{equation}
+c'est à dire que
+l'on suppose que $ A \subset B $
+et on doit en déduire
+$ f(A) \subset f(B) $.
+
+On rappelle que l'énoncé
+<<
+$ A \subset B $
+>>
+signifie:
+<<
+si $ x \in A $ alors $ x \in B $.
+>>
+De même, l'énoncé
+<<
+$ f(A) \subset f(B) $
+>>
+signifie:
+<<
+si $ y \in f(A) $
+alors $ y \in f(B) $.
+>>
+
+On suppose donc que
+$ A \subset B $.
+On veut montrer
+<<
+si $ y \in f(A) $
+alors $ y \in f(B) $.
+On fixe donc un
+$ y \in f(A) $.
+On se souvient que
+$ f(A) $ est l'ensemble
+\begin{equation}
+	\left\{ 
+		f(x);
+		x \in A
+	\right\}
+	.
+\end{equation}
+C'est un sous-ensemble
+de $ Y $,
+c'est à dire l'ensemble d'arrivé
+de $ f $.
+Si $ y \in f(A) $,
+cela veut dire qu'il existe
+un $ x \in A $ tel que
+$ y = f(x) $.
+Comme $ x \in A $
+et que $ A \subset B $,
+on a que $ x \in B $.
+Donc $ y = f(x) \in f(B) $,
+car on se rappelle que
+$ f(B) $ est l'ensemble
+\begin{equation}
+	\left\{ 
+		f(x);
+		x \in B
+	\right\}
+	.
+\end{equation}
+
+(2) On doit montrer:
+\begin{equation}
+	f(A \cup B)
+	=
+	f(A)
+	\cup
+	f(B)
+	.
+\end{equation}
+Pour montrer l'égalité
+de 2 ensembles,
+la méthode est toujours la même:
+on montre la double inclusion,
+c'est à dire dans notre cas
+\begin{align}
+	f(A \cup B)
+	&  \subset
+	f(A)
+	\cup
+	f(B)
+	\\
+	& \text{et}
+	\\
+	f(A)
+	\cup
+	f(B)
+	& \subset
+	f(A \cup B)
+	.
+\end{align}
+
+Montrons la première inclusion,
+\begin{equation}
+	f(A \cup B)
+	 \subset
+	f(A)
+	\cup
+	f(B)
+	.
+\end{equation}
+Soit $ y \in f( A \cup B) $.
+Cela veut dire qu'il existe
+$ x \in A \cup B $
+tel que
+$ y = f(x) $.
+Le fait que $ x \in A \cup B $
+veut dire
+<<
+$x \in A$
+ou
+$x \in B$
+>>.
+Il faut considérer les 2 cas.
+\begin{itemize}
+	\item
+		Dans le premier cas
+		$ x \in A $.
+		Donc
+		$ y = f(x) \in f(A) $,
+		et alors
+		$ y \in f(A) \cup f(B) $.
+	\item
+		Dans le deuxième cas,
+		$ x \in B $.
+		Donc
+		$ y = f(x) \in f(B) $,
+		et alors
+		$ y \in f(A) \cup f(B) $.
+\end{itemize}
+(On se rappelle que
+en général, pour deux ensemble
+$ C $ et $ D $ on a
+$ C \subset C \cup D$ 
+et
+$ D \subset C \cup D$.)
+Dans le 2 cas, on a la conclusion voulu,
+c'est à dire que
+$ y \in f(A) \cup f(B) $.
+On peut conclure que
+$ f(A \cup B) \subset f(A) \cup f(B) $.
+
+Montrons la deuxième inclusion,
+\begin{equation}
+	f(A)
+	\cup
+	f(B)
+	\subset
+	f(A \cup B)
+	.
+\end{equation}
+On va utiliser la propriété suivante:
+pour trois ensembles $ C, D, E $
+on a
+\begin{align}
+	C & \subset E
+	\\
+	& \text{et}
+	\\
+	D & \subset E
+	\\
+	& \Rightarrow
+	\\
+	C \cup D & \subset E
+	,
+\end{align}
+(le démontrer si ce n'est pas clair pour vous).
+
+On montre donc d'abord $ f(A) \subset f(A \cup B) $.
+On a $ A \subset A \cup B $,
+et d'après la question (1)
+cela implique
+$ f(A) \subset f(A \cup B)$.
+
+De même,
+on a $ B \subset A \cup B $,
+et d'après la question (1)
+cela implique
+$ f(B) \subset f(A \cup B)$.
+
+D'après la propriété énoncé plus haut,
+cela implique
+\begin{equation}
+	f(A)
+	\cup f(B)
+	\subset
+	f( A \cup B)
+	.
+\end{equation}
+
+\textbf{Conclusion.}
+On a montré 
+$ f(A \cup B) \subset f(A) \cup f(B) $
+et
+$
+f(A)
+\cup f(B)
+\subset
+f( A \cup B)
+$,
+cela veut dire que
+$ f(A \cup B) = f(A) \cup f(B) $
+.
+
+(3)
+On doit montrer
+\begin{equation}
+	f(A \cap B)
+	\subset
+	f(A)
+	\cap
+	f(B)
+	.
+\end{equation}
+Soit $ y \in f( A \cap B) $.
+Cela veut dire qu'il existe
+$ x \in A \cap B $
+tel que
+$ y = f(x) $.
+Comme $ x \in A \cap B $,
+$ x \in A $,
+donc $ y = f(x) \in f(A) $.
+Comme $ x \in A \cap B $,
+$ x \in B $,
+donc $ y = f(x) \in f(B) $.
+Comme $ y \in f(A) $
+et $ y \in f(B) $
+on en déduit que
+$ y \in f(A) \cap f(B) $.
+
+(4) On rappelle que
+\begin{equation}
+	f^{-1}(C)
+	=
+	\left\{ 
+	x \in X
+	\tq
+	f(x) \in C
+	\right\}
+	.
+\end{equation}
+C'est un sous-ensemble de
+$ X $ (c'est à dire l'ensemble de départ de $ f $).
+On a la caractérisation:
+\begin{align}
+	x \in	
+	f^{-1}(C)
+	\eq
+	f(x) \in C
+	.
+\end{align}
+
+On doit montrer:
+\begin{align}
+	C \subset D
+	% \\
+	\Rightarrow
+	% \\
+	f^{-1} (C)
+	\subset
+	f^{-1} (D)
+	.
+\end{align}
+On suppose donc
+$ C \subset D $
+et
+on se donne un 
+$ x \in f^{-1} (C) $.
+On a alors
+$ f(x) \in C $.
+Comme $ C \subset D $,
+on a aussi
+$ f(x) \in D $.
+Cela veut dire que
+$ x \in f^{-1} (D) $.
+On a bien montré
+$ f^{-1} (C) \subset f^{-1} (D) $.
+
+(5) On doit montrer:
+\begin{equation}
+	f^{-1} (C \cup D)
+	=
+	f^{-1} (C) \cup f^{-1}(D)
+	.
+\end{equation}
+On montre la double-inclusion.
+On commence par montrer que
+$ 
+f^{-1} (C \cup D)
+\subset
+f^{-1} (C) \cup f^{-1}(D)
+$:
+soit
+$ x \in
+f^{-1} (C \cup D)$.
+On a
+$ f(x) \in C \cup D $,
+c'est à dire que
+$ f(x) \in C$
+ou
+$ f(x) \in D $
+On traite les deux cas:
+\begin{itemize}
+	\item Si $ f(x) \in C $
+		alors $ x \in f^{-1}(C) $
+		et donc
+		$ x \in f^{-1} (C) \cup f^{-1} (D) $.
+	\item Si $ f(x) \in D $
+		alors $ x \in f^{-1}(D) $
+		et donc
+		$ x \in f^{-1} (C) \cup f^{-1} (D) $.
+\end{itemize}
+Dans les deux cas,
+$ x \in f^{-1} (C) \cup f^{-1} (D) $.
+On a prouvé que
+$
+f^{-1} (C \cup D)
+\subset
+f^{-1} (C) \cup f^{-1}(D)
+$.
+
+On montre la deuxième inclusion,
+c'est à dire
+$ 
+f^{-1} (C) \cup f^{-1}(D)
+\subset
+f^{-1} (C \cup D)
+$.
+Soit $ x \in
+f^{-1} (C) \cup f^{-1}(D)
+$:
+\begin{itemize}
+	\item 
+		Si $ x \in f^{-1} (C) $
+		alors $ f(x) \in C $
+		donc $ f(x) \in C \cup D $
+		et finalement
+		$ x \in f^{-1} (C \cup D) $.
+	\item 
+		Si $ x \in f^{-1} (D) $
+		alors $ f(x) \in D $
+		donc $ f(x) \in C \cup D $
+		et finalement
+		$ x \in f^{-1} (C \cup D) $.
+\end{itemize}
+Dans les deux cas,
+on a 
+$ x \in f^{-1} (C \cup D) $.
+On a bien montré que
+$ 
+f^{-1} (C) \cup f^{-1}(D)
+\subset
+f^{-1} (C \cup D)
+$.
+
+(6) On doit montrer que
+\begin{equation}
+	f^{-1} ( C \cap D )
+	=
+	f^{-1} (C)
+	\cap
+	f^{-1} (D)
+	.
+\end{equation}
+Pour montrer cet égalité entre ensemble,
+on va montrer que
+
+\begin{equation}
+	x \in
+	f^{-1} ( C \cap D )
+	\eq
+	x \in
+	f^{-1} (C)
+	\cap
+	f^{-1} (D)
+	.
+\end{equation}
+On a:
+\begin{align}
+	x
+	& \in
+	f^{-1} ( C \cap D )
+	\\
+	& \eq
+	\\
+	f(x)
+	& \in
+	C \cap D
+	\\
+	& \eq
+	\\
+	f(x)
+	\in
+	C
+	& \text{ et }
+	f(x)
+	\in
+	D
+	\\
+	& \eq
+	\\
+	x
+	\in
+	f^{-1} (C)
+	& \text{ et }
+	x
+	\in
+	f^{-1} (D)
+	\\
+	& \eq
+	\\
+	x
+	& \in
+	f^{-1} (C)
+	\cap
+	f^{-1} (D)
+	.
+\end{align}
+Cela prouve
+$ 
+f^{-1} ( C \cap D )
+=
+f^{-1} (C)
+\cap
+f^{-1} (D)
+$.
+\bibliographystyle{alpha}
+\bibliography{../references}
+\end{document}
