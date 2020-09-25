@@ -10,7 +10,8 @@
 \usepackage{glossaries}
 \usepackage[bookmarks]{hyperref} % in that order, to not have a link with every
 				% abreviation
-
+\usepackage{tikz}
+\usepackage{tikz-cd}	
 
 \newcommand{\g}[1]{\gls{#1}}
 
@@ -1330,7 +1331,7 @@ $.
 	f^{-1} (D)
 	.
 \end{equation}
-Pour montrer cet égalité entre ensemble,
+Pour montrer cet égalité entre ensembles,
 on va montrer que
 
 \begin{equation}
@@ -1392,6 +1393,203 @@ f^{-1} (C)
 \cap
 f^{-1} (D)
 $.
+
+\section{Exercice 9}
+
+On rappelle que pour
+déterminer si un repère
+$ (A, u, v, w) $
+est direct
+ou indirect,
+il faut calculer
+le produit-mixte
+$ det(u, v, w) $;
+si celui-ci est strictement
+positif le repère est direct,
+si celui-ci est strictement
+negatif le repère est indirect.
+
+On rappelle que le produit
+mixte $ det(u,v,w) $
+est défini par:
+\begin{equation}
+	det(u,v,w)
+	=
+	(u \wedge v) \cdot w
+	,
+\end{equation}
+où $ u \wedge v $ est le produit vectoriel
+de $ u $ et $ v $
+et <<$\cdot$>> est le produit scalaire.
+Résumons les propriétés essentielles
+du produit vectoriel:
+\begin{itemize}
+	\item $ u \wedge v = - v \wedge u $
+		(antisymétrie)
+	\item $ u \wedge u = 0 $ 
+	\item $ (u + v) \wedge w = u \wedge w + v \wedge w $ 
+		et
+		$ u \wedge (v + w) = u \wedge w + u \wedge w $ 
+		(linéarité)
+	\item $ u \wedge v $ est orthogonal (perpendiculaire) à
+		$ u $ et à $ v $
+	\item si $ (i,j,k) $ est la base canonique on a:
+		\begin{itemize}
+			\item $ i \wedge j = k $
+			\item $ j \wedge k = i $
+			\item $ k \wedge i = j $ 
+		\end{itemize}
+\end{itemize}
+On se souviendra de la dernière propriété
+avec le dessin suivant
+
+\begin{tikzcd}
+	i \arrow[rr, bend left] &                         & j \arrow[ld, bend left] \\
+			 & k \arrow[lu, bend left] &                        
+\end{tikzcd}	
+qu'il faut lire ainsi:
+je parcours le cercle dans le sens indiqué
+par les flêches,
+le produit vectoriel des deux premiers
+vecteurs que je rencontre est donné
+par le troisième vecteur.
+Si je parcours le cercle dans l'autre sens,
+c'est la même chose mais je met un signe moins
+au résultat.
+
+Déterminons si le repère
+$ (0, i, j, k) $
+est direct ou indirect.
+On rappelle que $ (i,j,k) $
+est la base canonique.
+On utilise la caractérisation avec le produit mixte.
+On calcule:
+\begin{align}
+	det(i, j, k)
+	& =
+	(i \wedge j) \cdot k
+	\\
+	&=
+	k \cdot k \com{car $ i \wedge j = k $}
+	\\
+	& =
+	1 \com{car $k \cdot k = \norm{k}^2 = 1$}
+	,
+\end{align}
+donc le produit mixte
+est strictement positif,
+donc le repère est direct.
+
+Déterminons si le repère
+$ (A_{(1,1,1)} , i, j, k) $
+est direct ou indirect.
+Ce repère a la même base
+que le repère précédent
+(seul l'origine change);
+or la propriété d'être direct
+ou indirect ne dépend que de la
+base.
+Le repère est donc direct.
+
+Déterminons si le repère
+$ (0, i, k, j) $
+est direct ou indirect.
+On utilise la caractérisation avec le produit mixte.
+On calcule:
+\begin{align}
+	det(i, k, j)
+	& =
+	(i \wedge k) \cdot j
+	\\
+	&=
+	-j \cdot j \com{car $ i \wedge k = -j $}
+	\\
+	& =
+	-1 \com{car $j \cdot j = \norm{j}^2 = 1$}
+	,
+\end{align}
+donc le produit mixte
+est strictement négatif,
+donc le repère est indirect.
+
+Déterminons si le repère
+$ (0, i+j, j+k, k) $
+est direct ou indirect.
+On utilise la caractérisation avec le produit mixte.
+On calcule:
+\begin{align}
+	det(i+j, j+k, k)
+	& =
+	((i+j) \wedge (j+k)) \cdot k
+	\\
+	& =
+	(i \wedge (j+k)
+	+
+	j \wedge (j+k)
+	)
+	\cdot k
+	\com{par linéarité}
+	\\
+	& =
+	(i \wedge j
+	+
+	i \wedge k
+	+
+	j \wedge j
+	+
+	j \wedge k
+	)
+	\cdot k
+	\com{par linéarité}
+	\\
+	& =
+	(i \wedge j
+	+
+	i \wedge k
+	+
+	j \wedge k
+	)
+	\cdot k
+	\com{car $ j \wedge j = 0 $ }
+	\\
+	& =
+	(k
+	-j
+	+
+	i
+	)
+	\cdot k
+	\com{car $ i \wedge j = k $,
+		$ i \wedge k = -j $
+		et
+		$ j \wedge k =i $ 
+	}
+	\\
+	& =
+	k \cdot k
+	-j \cdot k
+	+
+	i \cdot k
+	\com{par linéarité}
+	\\
+	& =
+	k \cdot k
+	\com{car $ j \perp k $ et $ i \perp k $  }
+	\\
+	& = 1
+	\com{car $ k \cdot k = \norm{k}^2=1 $}
+	,
+\end{align}
+donc le produit mixte
+est strictement positif,
+donc le repère est direct.
+On a utilisé le fait que
+si deux vecteurs $ u $
+et $ v $ sont orthogonaux
+(ce que l'on note $ u \perp v $)
+alors leur produit scalaire est nul,
+c'est à dire $ u \cdot v = 0 $.
+
 \bibliographystyle{alpha}
 \bibliography{../references}
 \end{document}

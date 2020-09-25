@@ -1,0 +1,591 @@
+%st&pdflatex
+\documentclass[12pt, a4paper,oneside]{article} %article pour voir la todolist
+% \documentclass[12pt, a4paper,oneside]{amsart} %amsart pour faire joli
+\usepackage{amssymb, amsfonts, mathrsfs}
+%\usepackage{a4wide, enumerate,} %test
+% \usepackage{showkeys} % for work version
+\usepackage[textwidth=1in,backgroundcolor=white,linecolor=white,bordercolor=white,textcolor=red]{todonotes}
+%\usepackage{a4wide}
+
+\usepackage{glossaries}
+\usepackage[bookmarks]{hyperref} % in that order, to not have a link with every
+				% abreviation
+\usepackage{tikz}
+\usepackage{tikz-cd}	
+
+\newcommand{\g}[1]{\gls{#1}}
+
+\newglossaryentry{graphs} {
+	name={\ensuremath{\Theta}},
+	description={the compact family of graphs}
+}
+\newglossaryentry{graphs_dual} {
+	name={\ensuremath{\Theta^{*} }},
+	description={the compact family of dual graphs}
+}
+
+\input{../these/preamble.tex}
+
+\title{Corrections feuille 1 L2 SV}
+\author{Florestan {Martin-Baillon}}
+
+\begin{document}
+
+\maketitle
+
+\section{Exercice 4}
+
+Pour chacune des suites suivantes, dire si elle
+est croissante, décroissante, minorée, majorée,
+bornée.
+
+\textbf{a)}
+La suite
+$ u_{n} = \frac{n}{n+1}, n \in \N $.
+\begin{itemize}
+	\item
+		Comme la suite est positive,
+		pour savoir si elle est croissante
+		on calcule $ \frac{u_{n+1} }{u_{n} } $
+		et on le compare à $ 1 $.
+		On a pour $ n \ge 1 $:
+		\begin{align}
+		\frac{u_{n+1} }{u_{n} }
+		=
+		\frac{n+1}{n+2}
+		\cdot
+		\frac{n+1}{n}
+		=
+		\frac{(n+1)^{2} }{n(n+2)}
+		=
+		\frac{n^2 + 2n + 1}{n^2 + 2n}
+		,
+		\end{align}
+		donc le numérateur est strictement
+		plus grand
+		que le dénominateur
+		et la fraction est toujours
+		strictement plus grande
+		que $ 1 $.
+		Cela veut dire que la suite
+		est strictement croissante.
+	\item Comme la suite est strictement croissante,
+		elle n'est pas décroissante.
+	\item La suite $ (u_{n}) $ est positive,
+		car c'est un quotient de deux
+		quantités positives,
+		donc elle est minorée
+		(par $ 0 $).
+	\item Comme on a $ n \le n+1 $
+		pour tout $ n \in \N $,
+		on a $ u_{n} \le 1 $.
+		Donc la suite est majorée.
+	\item La suite est majorée et minorée,
+		elle est donc bornée.
+\end{itemize}
+On aurait pu aussi raisonner autrement.
+La suite $ (u_{n}) $ tend vers $ 1 $,
+en effet:
+\begin{equation}
+	u_{n}
+	=
+	\frac{n}{n+1}
+	=
+	\frac{1}{1 + \frac{1}{n}}
+	\to_{n \to \infty} 
+	\frac{1}{1}
+	= 1.
+\end{equation}
+La suite $ (u_{n}) $
+est donc convergente,
+donc bornée
+(donc majorée et minorée).
+
+\textbf{b)}
+La suite
+$ v_{n} = (-2)^{n}, n \in \N $ 
+.
+On remarque que pour les $ n $
+pair, $ v_{n} $ est positif;
+en effet, pour tout $ n \in \N  $ :
+\begin{equation}
+	v_{2n} =
+	(-2)^{2n}
+	=
+	(-1)^{2n}
+	2^{2n} 
+	=
+	((-1)^{2})^{n} 
+	2^{2n} 
+	=
+	1^{n} 
+	\times
+	2^{2n} 
+	=
+	2^{2n} 
+	\ge 0
+	,
+\end{equation}
+tandis que pour les
+$ n $ impair,
+$ v_{n} $ est négatif;
+en effet, pour tout $ n \in \N $ :
+\begin{equation}
+	v_{2n+1} =
+	(-2)^{2n+1}
+	=
+	(-1)^{2n+1}
+	2^{2n=1} 
+	=
+	-(-1)^{2n} 
+	2^{2n} 
+	=
+	- 
+	2^{2n} 
+	\le 0
+	,
+	.
+\end{equation}
+On en déduit que la suite n'est ni
+croissante, ni décroissante:
+\begin{itemize}
+	\item si elle était croissante,
+		comme $ v_{0} = 1 $
+		est positif,
+		les termes de la suite
+		seraient toujours positifs,
+		ce qui n'est pas le cas
+		car on a vu que les termes
+		d'indices impairs étaient négatifs.
+	\item si elle était décroissante,
+		comme $ v_{1} = -2 $
+		est négatif,
+		les termes de la suite
+		seraient toujours négatifs,
+		ce qui n'est pas le cas
+		car on a vu que les termes
+		d'indices pairs étaient positifs.
+\end{itemize}
+
+La suite n'est pas minorée.
+En effet, considérons la suite 
+extraite
+$ v_{2n+1} = -2^{2n+1}, n \in \N $.
+Cette suite tend vers $ - \infty $,
+donc n'est pas minorée,
+donc $ (v_{n}) $ aussi n'est pas minorée.
+
+La suite n'est pas majorée.
+En effet, considérons la suite 
+extraite
+$ v_{2n} = 2^{2n}, n \in \N $.
+Cette suite tend vers $ + \infty $,
+donc n'est pas majorée,
+donc $ (v_{n}) $ aussi n'est pas majorée.
+
+\textbf{c)}
+La suite
+$ w_{n} = \frac{(-1)^{n} }{n}, n \in \N^{*} $.
+On remarque, comme pour la
+question \textbf{b)}
+que les termes d'indice pair
+sont positifs
+tandis que les termes d'indice 
+impair sont négatif
+(avec la même démonstration).
+On en déduit de la même manière
+que la suite n'est ni
+croissante, ni décroissante.
+
+La suite converge vers $ 0 $: en effet on a
+\begin{equation}
+	\abs{w_{n}} = \frac{1}{n}
+	\to_{n \to \infty} 0,
+\end{equation}
+et comme $ (\abs{w_{n}}) $
+tend vers $ 0 $,
+$ (w_{n})  $ tend vers $ 0 $.
+Comme la suite est convergente,
+elle est bornée et donc majorée
+et minorée.
+
+\textbf{d)}
+La suite
+$ x_{n} = \frac{n^{2} + 1}{n + 1}, n \in \N $.
+Pour étudier la monotonie de cette suite,
+on va étudier la fonction annexe
+\begin{equation}
+	f(x) = \frac{x^{2} +1}{x+1}
+	,
+	x \in \R_{+}.
+\end{equation}
+Comme on a $ x_{n} = f(n) $,
+si la fonction $ f $
+est monotone,
+la suite $ (x_{n}) $
+le sera aussi.
+On calcule la dérivée de $ f $,
+pour $ x \in \R_{+} $:
+\begin{equation}
+	f'(x)=
+	\frac{2x(x+1) - (x^2+1)}{(x+1)^{2} }
+	=
+	\frac{2x^2+2x-x^2-1}{(x+1)^2}
+	=
+	\frac{x^2+2x-1}{(x+1)^{2}}
+	.
+\end{equation}
+Le numérateur est un polynome du second
+degré.
+Son discriminant
+est
+$ \Delta = 4 + 4 = 8 > 0 $,
+donc ses racines sont
+\begin{equation}
+	x_{1} 
+	= -1-\sqrt{2}
+		,
+	x_{2}  
+	= -1+\sqrt{2}
+	.
+\end{equation}
+On en déduit que ce polynome
+est positif pour
+$ x \ge x_{2} $,
+donc que $ f' $
+est positive
+pour $ x \ge x_{2} $.
+On a
+\begin{equation}
+	1 \le \sqrt{2} \le 2
+	,
+\end{equation}
+donc
+\begin{equation}
+	0 \le -1 + \sqrt{2} \le 1
+	,
+\end{equation}
+donc $ f' $ est strictement
+positive
+pour $ x \ge 1 $.
+On en déduit que $ f $
+est strictement croissante
+pour $ x \ge 1 $.
+Donc $ (x_{n}) $
+est une suite strictement croissante
+pour $ n \ge 1 $.
+Comme on a $ x_{0} = 1 $
+et $ x_{1} =1 $,
+on a que $ (x_{n}) $
+est croissante pour
+$ n \ge 0 $.
+Comme $ (x_{n}) $
+est strictement croissante
+pour $ n \ge 1 $,
+elle n'est pas décroissante.
+
+La suite $ (x_n) $
+est positive, donc minorée.
+Elle tend vers $ +\infty $,
+en effet:
+\begin{equation}
+	x_{n}=
+	\frac{n^{2} +1}{n+1}
+	=
+	\frac{n + \frac{1}{n} }{1 + \frac{1}{n}}
+	,
+\end{equation}
+et le numérateur tend vers $ +\infty $
+tandis que le dénominateur tend vers $ 1 $,
+donc la fraction tend vers $ +\infty $.
+La suite n'est donc pas bornée.
+
+\textbf{e)}
+La suite
+$ y_{n} = n e^{-n}, n \in \N $.
+On a $ y_{0} = 0 $
+et $ y_{n} > 0 $
+pour
+$ n \ge 1 $.
+Pour étudier la monotonie de
+la suite, on étudie le
+quotient $ \frac{y_{n+1} }{y_{n} } $
+pour $ n \ge 1 $.
+On a:
+\begin{equation}
+	\frac{y_{n+1} }{y_{n} }
+	=
+	\frac{n+1}{n}
+	\cdot
+	\frac{e^{-(n+1)} }{e^{-n} }
+	=
+	\frac{n+1}{n}
+	e^{-1}
+	,
+\end{equation}
+et d'après la question
+\textbf{a)}
+on sait que la suite
+$ \frac{n+1}{n} $
+est décroissante,
+et pour $ n=1 $
+elle vaut
+$ 2 $.
+Donc on a que
+$ \frac{n+1}{n} \le 2 $
+pour tout $ n \ge 1 $.
+Comme $ e > 2 $,
+il vient que $ \frac{y_{n+1} }{y_{n} } < 1 $
+pour tout $ n \ge 1 $.
+La suite $ (y_n) $ est donc
+décroissante pour $ n \ge 1 $.
+Par contre comme
+$ y_{0} = 0 < y_{1} $,
+la suite n'est pas décroissante
+pour $ n \ge 0 $.
+Elle n'est pas non plus croissante.
+
+Comme la suite est positive, elle est minorée.
+Comme elle est décroissante à partir de $ n=1 $,
+on a $ y_{n} \le y_{1} $ pour tout $ n \ge 1 $,
+donc la suite est majorée.
+Comme elle est majorée et minorée, elle est bornée.
+
+\section{Exercice 5}
+
+La suite $ (u_{n})  $ 
+est définie par
+$ u_{0} = 1 $ 
+et
+$ u_{n+1} = u_{n} + \frac{1}{(n+1)!} $ 
+.
+
+\textbf{a)}
+Pour montrer que la suite
+est croissante,
+on calcule
+$ u_{n+1} - u_{n} $.
+Comme on a,
+pour tout $ n \ge 1 $
+\begin{equation}
+	u_{n+1} - u_{n}
+	=
+	\frac{1}{(n+1)!}
+	> 0
+	,
+\end{equation}
+la suite est (strictement) croissante.
+
+\textbf{b)}
+Définissons,
+pour $ n \ge 1 $
+la propriété
+$ (H_{n}): \frac{1}{n!} \le \frac{1}{2^{n-1} } $.
+
+\textbf{Initialisation.}
+pour $ n=1 $ on a
+$ n! = 1 $ et
+$ \frac{1}{2^{n-1} } = \frac{1}{2^{0} } = 1 $.
+La propriété $ (H_{1}) $ est bien vérifiée.
+
+\textbf{Hérédité.}
+Supposons que pour un certain
+$ n \ge 1 $, 
+la propriété $ (H_{n}) $
+soit vraie.
+Démontrons la propriété
+$ (H_{n+1)}) $.
+On a
+$ (n+1)! = n!  (n+1) $
+et par hypothèse de
+récurrence,
+$ \frac{1}{n!} \le \frac{1}{2^{n-1} } $.
+Donc:
+\begin{equation}
+	\frac{1}{(n+1)!}
+	=
+	\frac{1}{n! (n+1)}
+	\le
+	\frac{1}{2^{n-1} (n+1)}
+	,
+\end{equation}
+et comme pour $ n \ge 1 $,
+$ n+1 \ge 2 $, on a
+\begin{equation}
+	\frac{1}{2^{n-1} (n+1)}
+	\le
+	\frac{1}{2^{n-1} \times 2}
+	=
+	\frac{1}{2^{n} }
+	.
+\end{equation}
+On a donc: $ \frac{1}{(n+1)!} \le \frac{1}{2^{n} } $
+et la propriété $ (H_{n+1}) $ est vraie.
+
+\textbf{Conclusion.}
+Par le principe de récurrence,
+pour tout $ n \ge 1 $ on a
+\begin{equation}
+	\frac{1}{n!}
+	\le
+	\frac{1}{2^{n-1} }
+	.
+\end{equation}
+
+\textbf{c)}
+D'après le résultat
+de la question \textbf{b)}
+on a, pour tout $ n \ge 1 $:
+\begin{equation}
+	u_{n+1}
+	=
+	u_{n} 
+	+
+	\frac{1}{(n+1)!}
+	\le
+	u_{n}
+	+
+	\frac{1}{2^{n} }
+	.
+\end{equation}
+On va déduire
+de cela,
+par récurrence,
+que pour tout $ n \ge 1 $:
+\begin{equation}
+	u_{n}
+	\le
+	u_{0}
+	+
+	\sum_{k=0}^{n-1} 
+	\frac{1}{2^{k} }
+	.
+\end{equation}
+En effet, posons
+pour $ n \ge 1 $,
+\begin{equation}
+	(H_{n}):
+	u_{n}
+	\le
+	u_{0}
+	+
+	\sum_{k=0}^{n-1} 
+	\frac{1}{2^{k} }
+	.
+\end{equation}
+
+\textbf{Initialisation.}
+On a d'une part
+$ u_{1} = 1 $ 
+et d'autre part
+$ u_{0} + \sum_{k=0}^{0} \frac{1}{2^{k} } = 1 + 1 = 2 $,
+donc $ (H_{1}) $ est vraie.
+
+\textbf{Hérédité.}
+Supposons que pour un certain
+$ n \ge 1 $, 
+la propriété $ (H_{n}) $
+soit vraie.
+Démontrons la propriété
+$ (H_{n+1)}) $.
+On a
+\begin{equation}
+	u_{n+1}
+	\le
+	u_{n}
+	+
+	\frac{1}{2^{n} }
+	,
+\end{equation}
+et par hypothèse de récurrence,
+\begin{equation}
+	u_{n}
+	\le
+	u_{0}
+	+
+	\sum_{k=0}^{n-1} 
+	\frac{1}{2^{k} }
+	,
+\end{equation}
+donc
+\begin{equation}
+	u_{n+1}
+	\le
+	u_{0}
+	+
+	\sum_{k=0}^{n-1} 
+	\frac{1}{2^{k} }
+	+
+	\frac{1}{2^{n} }
+	=
+	\sum_{k=0}^{n} 
+	\frac{1}{2^{k} }
+	,
+\end{equation}
+ce qui veut dire 
+que la propriété
+$ (H_{n+1}) $ 
+est vraie.
+
+\textbf{Conclusion.}
+On a montré par récurrence que
+pour tout $ n \ge 1 $,
+$
+u_{n}
+\le
+u_{0}
++
+\sum_{k=0}^{n-1} 
+\frac{1}{2^{k} }
+$.
+
+Calculons la somme qui apparait
+au membre de droite:
+\begin{equation}
+	\sum_{k=0}^{n-1} 
+	\frac{1}{2^{k} }
+	=
+	\frac{1 - \frac{1}{2^{n} }}
+	{1 - \frac{1}{2}}
+	=
+	\frac{1 - \frac{1}{2^{n}} }
+	{\frac{1}{2}}
+	=
+	2
+	(1 - \frac{1}{2^{n}})
+	\le
+	2
+	,
+\end{equation}
+car
+$
+(1 - \frac{1}{2^{n}}) \le 1
+$.
+On en déduit que pour
+tout $ n \ge 1 $,
+\begin{equation}
+	u_{n}
+	\le
+	u_{0}
+	+
+	\sum_{k=0}^{n-1} 
+	\frac{1}{2^{k} }
+	\le
+	u_{0}
+	+ 2
+	= 1 + 2 = 3
+	.
+\end{equation}
+
+\textbf{e)}
+La suite $ (u_{n}) $ 
+est croissante
+et majorée
+donc converge.
+
+
+
+
+\bibliographystyle{alpha}
+\bibliography{../references}
+\end{document}

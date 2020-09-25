@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.27)  24 SEP 2020 14:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.27)  25 SEP 2020 09:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**td1_pc.tex
-(./td1_pc.tex
+**td1_svl2.tex
+(./td1_svl2.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -746,10 +746,9 @@ Package: thm-amsthm 2014/04/21 v66
 \c@definition=\count178
 \c@propo=\count179
 \c@Def=\count180
-\c@Rq=\count181
-\c@corollary=\count182
-) (./td1_pc.aux)
-\openout1 = `td1_pc.aux'.
+\c@corollary=\count181
+) (./td1_svl2.aux)
+\openout1 = `td1_svl2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
 LaTeX Font Info:    ... okay on input line 32.
@@ -770,16 +769,16 @@ LaTeX Font Info:    Try loading font information for OT1+lmr on input line 32.
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count183
+\scratchcounter=\count182
 \scratchdimen=\dimen266
 \scratchbox=\box48
-\nofMPsegments=\count184
-\nofMParguments=\count185
+\nofMPsegments=\count183
+\nofMParguments=\count184
 \everyMPshowfont=\toks56
-\MPscratchCnt=\count186
+\MPscratchCnt=\count185
 \MPscratchDim=\dimen267
-\MPnumerator=\count187
-\makeMPintoPDFobject=\count188
+\MPnumerator=\count186
+\makeMPintoPDFobject=\count187
 \everyMPtoPDFconversion=\toks57
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -803,14 +802,14 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count189
+\c@section@level=\count188
 )
 LaTeX Info: Redefining \ref on input line 32.
 LaTeX Info: Redefining \pageref on input line 32.
 LaTeX Info: Redefining \nameref on input line 32.
- (./td1_pc.out) (./td1_pc.out)
+ (./td1_svl2.out) (./td1_svl2.out)
 \@outlinefile=\write4
-\openout4 = `td1_pc.out'.
+\openout4 = `td1_svl2.out'.
 
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 35.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omllmm.fd
@@ -843,44 +842,43 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 35.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 39.
+(Font)              <12> on input line 44.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 39.
+(Font)              <8> on input line 44.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 39.
- [1
-
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 1086.
+(Font)              <6> on input line 44.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 47.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1086.
- [12] [13] [14] [15]
-No file td1_pc.bbl.
-[16]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1595.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1595.
- (./td1_pc.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1595.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1595.
-Package rerunfilecheck Info: File `td1_pc.out' has not changed.
-(rerunfilecheck)             Checksum: F6FB2B0D56E242FE86C207AF6CE1AB4F;382.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 47.
+ [1
+
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
+No file td1_svl2.bbl.
+[5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 591.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 591.
+ (./td1_svl2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 591.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 591.
+Package rerunfilecheck Info: File `td1_svl2.out' has not changed.
+(rerunfilecheck)             Checksum: AD4C2C9E7182FE333E6A337FE795C76E;90.
  ) 
 Here is how much of TeX's memory you used:
- 25804 strings out of 492616
- 506334 string characters out of 6129480
- 640933 words of memory out of 5000000
- 29087 multiletter control sequences out of 15000+600000
- 45273 words of font info for 57 fonts, out of 8000000 for 9000
+ 25626 strings out of 492616
+ 502972 string characters out of 6129480
+ 634935 words of memory out of 5000000
+ 28948 multiletter control sequences out of 15000+600000
+ 41055 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,14n,84p,2050b,943s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on td1_pc.pdf (16 pages, 183664 bytes).
+ 62i,9n,84p,2052b,329s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on td1_svl2.pdf (5 pages, 161501 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
- 46 named destinations out of 1000 (max. 500000)
- 173 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 123 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
